@@ -34,7 +34,7 @@ public class VerifyHomePageFunctionality {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void verifyHomePageurl() {
 
 		String pageurl = driver.getCurrentUrl();
