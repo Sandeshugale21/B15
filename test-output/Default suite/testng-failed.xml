@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumpractices.LoginScenarioUsingDataProvider">
+      <class name="omayotestcases.VerifyValidUserLogin">
         <methods>
-          <include name="loginTestUsingDataProvider" invocation-numbers="2"/>
-          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="tearDowb"/>
+          <include name="verifyValidLogin"/>
         </methods>
-      </class> <!-- seleniumpractices.LoginScenarioUsingDataProvider -->
+      </class> <!-- omayotestcases.VerifyValidUserLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

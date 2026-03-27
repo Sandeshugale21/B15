@@ -3,17 +3,22 @@ package util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
 public class Utilities {
@@ -32,7 +37,7 @@ public class Utilities {
 		}
 		return properties.getProperty(key);
 	}
-
+/*
 	public static Map<Integer, List<Object>> readExcel(String sheetName) {
 		File file = new File("src/test/resources/registrationdetails.xlsx");
 		HashMap<Integer, List<Object>> userData = new HashMap<Integer, List<Object>>();
@@ -87,6 +92,13 @@ public class Utilities {
 		Select select = new Select(dropdownElement);
 		select.selectByVisibleText(dropDownValueToBeSelected);
 
+	}  	*/
+	
+	
+	public static void waitForElementToBeVisible(WebDriver driver, Long timeout, WebElement element) {
+		FluentWait<WebDriver> wait= new FluentWait<WebDriver>(driver);
+		wait.withTimeout(Duration.ofSeconds(timeout	)).ignoring(TimeoutException.class)
+		.pollingEvery(Duration.ofMillis(10)).until(ExpectedConditions.visibilityOf(element));
 	}
 
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import util.Utilities;
-
+/*
 public class DataDriverUshingExcel {
 
 	public static void main(String[] args) {
@@ -33,3 +33,4 @@ public class DataDriverUshingExcel {
 	}
 
 }
+*/
